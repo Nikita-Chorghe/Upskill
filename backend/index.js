@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 const express = require('express');
 const app = express();
 const users = require('./routes/users');
+const courses = require('./routes/courses');
+const tutors = require('./routes/tutors');
 const auth = require('./routes/auth');
 
 var cors = require('cors');
@@ -19,8 +21,10 @@ mongoose.connect('mongodb://localhost/upskill')
   .catch(err => console.error('Could not connect to MongoDB...'));
 
 app.use(express.json());
+app.use('/api/courses', courses);
 app.use('/api/users', users);
 app.use('/api/auth', auth);
+app.use('/api/tutors', tutors);
 
 const port = process.env.PORT || 8000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));

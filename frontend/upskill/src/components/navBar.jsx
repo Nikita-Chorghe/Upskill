@@ -4,8 +4,8 @@ import { Link, NavLink } from "react-router-dom";
 const NavBar = () => {
   const navbarStyle = {
     backgroundColor: "#012734", // Replace with your desired background color
+    // paddingBottom: 20,
   };
-
   return (
     <nav className="navbar navbar-expand-lg px-5" style={navbarStyle}>
       <Link className="navbar-brand fw-bold text-white" to="/">

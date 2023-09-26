@@ -12,11 +12,19 @@ class UserForm extends Form {
     name: Joi.string().required().label("Name"),
   };
   doSubmit = async () => {
-    await userService.register(this.state.data);
+    try {
+      await userService.register(this.state.data);
+    } catch (ex) {
+      if (ex.response && ex.response.status === 400) {
+        const errors = { ...this.state.errors };
+        errors.username = ex.response.data;
+        this.setState({ errors });
+      }
+    }
   };
   render() {
     return (
-      <div>
+      <div className="m-5">
         <h1 className="text-center">Register</h1>
         <form
           onSubmit={this.handleSubmit}
