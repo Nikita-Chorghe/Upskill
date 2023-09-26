@@ -6,6 +6,7 @@ const passwordComplexity = require("joi-password-complexity");
 const bcrypt = require('bcrypt');
 const _ = require('lodash');
 const {User} = require('../models/user');
+const {Tutor} = require('../models/tutorc');
 const mongoose = require('mongoose');
 const express = require('express');
 const router = express.Router();
@@ -23,6 +24,21 @@ router.post('/', async (req, res) => {
   
   res.send(token);
 });
+
+router.post('/', async (req, res) => {
+  const { error } = validate(req.body); 
+  if (error) return res.status(400).send(error.details[0].message);
+
+  let tutor  = await Tutor.findOne({email:req.body.email});
+  if (!tutor) return res.status(400).send('Invalid email or password');
+
+  const validPassword = await bcrypt.compare(req.body.password, tutor.password)
+  if (!validPassword) return res.status(400).send('Invalid email or password');
+  const token = tutor.generateAuthToken();
+  
+  res.send(token);
+});
+
 
 function validate(req) {
     const schema = Joi.object({

@@ -1,14 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,500;6..12,600;6..12,800;6..12,900&family=Oswald:wght@300;400;500;600&family=Raleway:ital,wght@0,200;0,300;0,600;1,200;1,400;1,500&family=Shizuru&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,500;6..12,600;6..12,800;6..12,900&family=Open+Sans:ital,wght@0,400;0,600;1,400;1,500;1,600;1,700;1,800&family=Oswald:wght@300;400;500;600&family=Raleway:ital,wght@0,200;0,300;0,600;1,200;1,400;1,500&family=Shizuru&display=swap');
 
 
 
 .App {
-  text-align: center;
+  font-family: 'Merriweather', serif;
   font-family: 'Nunito Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-family: 'Oswald', sans-serif;
   font-family: 'Raleway', sans-serif;
   font-family: 'Shizuru', cursive;
+  
 }
+
 
 .App-logo {
   height: 40vmin;
@@ -36,13 +40,15 @@
 }
 .object-fit-cover {
   width: 1921px;
-  height: 509px ;
+  height: 498px ;
   object-fit: cover; 
+  padding-bottom: 20px;
 }
 .app-container {
   display: flex;
   flex-direction: row;
   height:450;
+  
 }
 
 /* .carousel-section{
@@ -56,6 +62,7 @@
 
 .carousel-section {
   background-color: #f0f0f0;
+  padding-bottom: 30px;
 }
 
 .about-us-section {
@@ -64,6 +71,37 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.about-us-container {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.image-container {
+  flex: 0 0 auto;
+  padding-right: 20px;
+}
+
+.text-container {
+  flex: 1 1 auto;
+  padding-left: 20px;
+}
+.home-h3{
+  text-align: center;
+  font-weight: bold;
+  font-family: mooli, sans-serif;
+}
+.span-font{
+  padding-top: 20px;
+  font-family:mooli;
+  font-weight: bold;
+  font-size: large;
+}
+
+.ff-m{
+  font-family: 'Merriweather';
 }
 
 @keyframes App-logo-spin {
