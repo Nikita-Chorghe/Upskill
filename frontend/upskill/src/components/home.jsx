@@ -1,16 +1,18 @@
 import React, { Component } from "react";
 
 import { Link } from "react-router-dom";
-import HomeCarousel from "./HomeCarousel";
+import TopTutors from "./topTutors";
+import AboutUs from "./aboutUs";
 
-const image = require("./images/cooking.jpg");
+const image = require("./images/tutoringf.png");
 class Home extends Component {
   state = {};
   render() {
     return (
-      <div className="container-fluid  text-center ">
-        <div className="row bg-secondary-subtle mb-5 px-5 py-5">
-          <div className="col my-auto">
+      <div className="container-fluid  text-center  ">
+        <div className="row bg-secondary-subtle mb-5 p-4">
+          <div className="col-2"></div>
+          <div className="col-4  my-auto">
             <h3 className="text-start fw-bolder m-5 ff-m">
               In the digital realm of limitless possibilities, we empower minds
               and transform futures through the finest online education, where
@@ -18,18 +20,33 @@ class Home extends Component {
               everyday journey.
             </h3>
           </div>
-          <div className="col">
-            <img src={image} className="img-fluid rounded" alt="home_image" />
+          <div className="col-4">
+            <img
+              src={image}
+              className="img-fluid rounded-image"
+              alt="home_image"
+            />
           </div>
+          <div className="col-2"></div>
         </div>
-
-        <div className="row mx-5">
+        <div className="row">
+          <TopTutors />
+        </div>
+        <div className="m-auto text-center">
+          <h5>
+            Want to learn more and know more about courses and professor ?
+          </h5>
+          <Link to="/tutors">
+            <button className="btn btn-primary bth-sm ms-3">Click Here</button>
+          </Link>
+        </div>
+        {/* <div className="row mx-5">
           <div className="row">
             <h3> Our Mission</h3>
           </div>
-          <div className="row mx-6">
-            <span className="">
-              <p>
+          <div className="row mx-6 text-center">
+            <div className="w-75 m-auto text-center">
+              <span>
                 Welcome to our premier online tutoring platform, where learning
                 knows no boundaries. We are dedicated to helping students of all
                 ages and levels achieve academic excellence from the comfort of
@@ -46,14 +63,12 @@ class Home extends Component {
                 aspirations into reality. Explore our diverse range of subjects,
                 and let's embark on this learning journey together. Your future
                 starts here!
-              </p>
-              Want to learn more and know more about courses and professor ?
-            </span>
+                <br></br>
+              </span>
+            </div>
           </div>
-        </div>
-        <Link to="/tutors">
-          <h6>Click Here</h6>
-        </Link>
+        </div> */}
+        <AboutUs />
       </div>
     );
   }
