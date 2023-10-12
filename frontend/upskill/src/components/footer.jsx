@@ -4,7 +4,7 @@ import "font-awesome/css/font-awesome.css";
 class Footer extends Component {
   render() {
     return (
-      <footer className="position-absolute custom-footer text-center bottom-0 w-100">
+      <footer className="text-center bottom-0 w-100 mt-5">
         <div className="container p-1">
           <section className="mb-1">
             <a

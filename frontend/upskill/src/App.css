@@ -76,7 +76,8 @@
 .about-us-container {
   display: flex;
   align-items: center;
-  padding: 20px;
+  padding: 30px;
+  border: 1px solid #000
 }
 
 .image-container {
@@ -102,6 +103,29 @@
 
 .ff-m{
   font-family: 'Merriweather';
+}
+
+.rounded-image{
+  border-radius: 50%;
+}
+
+
+.rounded-images{
+  border-radius: 50%;
+  height:300px;
+  width:400px
+  
+}
+
+.rounded-image-about{
+  border-radius: 5%;
+}
+.container-with-padding {
+  padding-top: 70px; 
+  
+}
+.h1-about{
+  padding:60px
 }
 
 @keyframes App-logo-spin {
