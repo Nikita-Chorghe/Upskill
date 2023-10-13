@@ -9,7 +9,12 @@ const tutors = require('./routes/tutors');
 const auth = require('./routes/auth');
 
 var cors = require('cors');
-app.use(cors())
+app.use(
+  cors({
+    origin: ["http://localhost:3000"],
+    credentials: true,
+  })
+);
 
 if(!config.get('jwtPrivateKey')){
     console.error('FATAL ERROR: jwtPrivateKey is not defined.');

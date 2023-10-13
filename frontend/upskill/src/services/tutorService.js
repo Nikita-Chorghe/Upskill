@@ -1,6 +1,6 @@
 import http from './httpService';
 
-const apiEndpoint = process.env.REACT_APP_API_URL + "/tutors";
+const apiEndpoint =  "/tutors";
 export function getTutors(){
     return http.get(apiEndpoint)
 }
