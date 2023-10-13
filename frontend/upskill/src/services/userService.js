@@ -1,8 +1,7 @@
  import http from "./httpService";
- import config from "../config.json"
 
- const apiEndpoint = config.apiUrl + "/users";
 
+ const apiEndpoint = process.env.REACT_APP_API_URL + "/users";
  export function register(user){
     return http.post(apiEndpoint, {
         email: user.username,

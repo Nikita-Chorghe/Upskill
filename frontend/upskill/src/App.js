@@ -28,7 +28,7 @@ class App extends Component {
         <Routes>
             <Route path="/tutors/:id" element={<TutorCourseDetails/>}/>
             <Route path="/userForm" element={<UserForm/>}/>
-            <Route path="/loginForm" element={<LoginForm/>}/>
+            <Route path="/loginForm" element={<LoginForm />}/>
             <Route path="/userForm" element={<UserForm/>}/>
             <Route path='/users' element={<Users/>}></Route>
             <Route path='/not-found' element={<NotFound/>}></Route>

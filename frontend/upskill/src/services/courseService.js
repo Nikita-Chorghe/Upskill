@@ -1,7 +1,8 @@
 import http from "./httpService";
-import config from "../config.json"
 
-const apiEndpoint = config.apiUrl + "/courses";
+
+
+const apiEndpoint = process.env.REACT_APP_API_URL + "/courses";
 
 export function getCourses(){
     return http.get(apiEndpoint)
