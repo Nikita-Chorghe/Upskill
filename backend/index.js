@@ -1,4 +1,4 @@
-console.log("hello world")
+var path = require("path");
 const config = require('config')
 const mongoose = require('mongoose');
 const express = require('express');
@@ -9,7 +9,12 @@ const tutors = require('./routes/tutors');
 const auth = require('./routes/auth');
 
 var cors = require('cors');
-app.use(cors())
+app.use(
+  cors({
+    origin: ["http://localhost:3000"],
+    credentials: true,
+  })
+);
 
 if(!config.get('jwtPrivateKey')){
     console.error('FATAL ERROR: jwtPrivateKey is not defined.');
@@ -21,6 +26,17 @@ mongoose.connect('mongodb://localhost/upskill')
   .catch(err => console.error('Could not connect to MongoDB...'));
 
 app.use(express.json());
+
+app.use(express.static(path.join(__dirname, "./public/build")));
+
+app.get("/", (req, res) => {
+  res.sendFile("./public/build/index.html", (err) => {
+    res.status(500).send(err);
+  });
+});
+
+
+
 app.use('/api/courses', courses);
 app.use('/api/users', users);
 app.use('/api/auth', auth);

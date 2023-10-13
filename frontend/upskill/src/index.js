@@ -8,8 +8,17 @@ import {BrowserRouter} from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'font-awesome/css/font-awesome.css';
+import axios from 'axios';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+console.log(process.env.NODE_ENV);
+
+axios.defaults.baseURL =
+  process.env.NODE_ENV === "production"
+    ? "/api"
+    : "http://localhost:8000/api/";
+
 root.render(
   <StrictMode>
     <BrowserRouter>
