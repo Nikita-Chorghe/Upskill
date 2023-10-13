@@ -4,6 +4,12 @@ const mongoose = require('mongoose');
 const express = require('express');
 const router = express.Router();
 
+// router.get("/", (req, res) => {
+//   res.sendFile("./public/build/index.html", (err) => {
+//     res.status(500).send(err);
+//   });
+// });
+
 router.get('/', async (req, res) => {
   const tutors = await Tutor.find().sort('name');
   res.send(tutors);
