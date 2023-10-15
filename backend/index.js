@@ -24,7 +24,8 @@ console.log(process.env.JWT_PRIVATE_KEY);
 //     process.exit(1);
 // }
 
-mongoose.connect('mongodb://localhost/upskill')
+// mongoose.connect('mongodb://localhost/upskill')
+mongoose.connect(process.env.MONGODB_CONNECT_URL)
   .then(() => console.log('Connected to MongoDB...'))
   .catch(err => console.error('Could not connect to MongoDB...'));
 
