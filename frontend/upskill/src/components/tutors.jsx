@@ -75,6 +75,16 @@ class Tutors extends Component {
   };
 
   render() {
+    if (!this.props.loggedIn) {
+      return (
+        <center>
+          <div className="m-5">
+            <h3>Please log in to see the list!</h3>
+          </div>
+        </center>
+      );
+    }
+
     const { length: count } = this.state.tutors;
     if (count === 0) return <p>There are no Tutor in datatbase</p>;
     const { pageSize, currentPage, sortColumn } = this.state;
