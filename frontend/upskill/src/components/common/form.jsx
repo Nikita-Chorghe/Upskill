@@ -22,7 +22,7 @@ class Form extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const errors = this.validate();
-    console.log(errors);
+    // console.log(errors);
     this.setState({ errors: errors || {} });
 
     if (errors) return;

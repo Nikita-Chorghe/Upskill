@@ -8,6 +8,8 @@ const courses = require('./routes/courses');
 const tutors = require('./routes/tutors');
 const auth = require('./routes/auth');
 
+require('dotenv').config();
+
 var cors = require('cors');
 app.use(
   cors({
@@ -15,11 +17,12 @@ app.use(
     credentials: true,
   })
 );
+console.log(process.env.JWT_PRIVATE_KEY);
 
-if(!config.get('jwtPrivateKey')){
-    console.error('FATAL ERROR: jwtPrivateKey is not defined.');
-    process.exit(1);
-}
+// if(!config.get('jwtPrivateKey')){
+//     console.error('FATAL ERROR: jwtPrivateKey is not defined.');
+//     process.exit(1);
+// }
 
 mongoose.connect('mongodb://localhost/upskill')
   .then(() => console.log('Connected to MongoDB...'))
